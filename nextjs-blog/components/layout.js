@@ -9,7 +9,10 @@ const NAME = "Zubin Pratap";
 export const SITE_TITLE = "My Next.js Sample Website";
 
 /**
- * param home is a boolean that drives rendering logic for this Layout file
+ * prop.home is a boolean that drives rendering logic for this Layout file
+ * Layout is also the files that wraps the contents of  pages - all components that need to have common elements end up being
+ * children of Layout.  In this case Layout contains a header, and a conditionally rendered footer returning HOME.
+ * All other pages get rendered as children
  */
 const Layout = ({ children, home }) => {
     return (
@@ -64,7 +67,7 @@ const Layout = ({ children, home }) => {
             {!home && (
                 <div className={styles.backToHome}>
                     <Link href="/">
-                        <a>← Back to home</a>
+                        <a> ← Back Home </a>
                     </Link>
                 </div>
             )}
