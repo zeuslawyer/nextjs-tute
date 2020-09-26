@@ -44,19 +44,17 @@ function showData(data, type) {
         return <h4> No Data. </h4>;
     } else {
         return (
-            <ol>
+            <ul>
                 {data.map((item, i) => {
-                    return (
-                        <li key={i}>
-                            Data type: {type}.{" "}
-                            {item.name
-                                ? item.name
-                                : "No Name, but the id is: " + item.id}
-                            .
-                        </li>
-                    );
+                    const base = `This ${type} type has an id of ${item.id}.`;
+                    let content =
+                        type === "users"
+                            ? base + ` The user's name is ${item.name}.`
+                            : base + " I cannot tell you more at the moment.";
+
+                    return <li key={i}>{content}</li>;
                 })}
-            </ol>
+            </ul>
         );
     }
 }
