@@ -27,3 +27,11 @@ Run `yarn dev` from the `/nextjs-blog` directory.
 8. SSR : The pre-rendering is done server-side, on _each_ request, so this is slower. The HTML gets pre-rendered after the server does the computation.
 
 9. If you dont want to use pre-rendering stick to the usual client-side rendering, where parts of the page (the static HTML bit) gets pre-rendered, and then when the page loads, the client side JS makes network calls to hydrate the data. Next JS has a specific (optional) hook for client side rendering - [called SWR](https://swr.vercel.app/).
+
+## `DOCKER`
+
+The `Dockerfile` is in `/nextjs-blog`.
+
+Run `docker build -t zeuslawyer/nextjs-tute:0.<0> .` from inside `/nextjs-blog`
+
+Then run `docker run -p 3000:3000 <image id>`
