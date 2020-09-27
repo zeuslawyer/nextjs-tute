@@ -14,12 +14,6 @@ const Dynamic = ({ data, type }) => {
             </Head>
             <h1>{POST_TITLE}</h1>
             {showData(data, type)}
-            <h3>
-                Head back{" "}
-                <Link href="/">
-                    <a>Home.</a>
-                </Link>
-            </h3>
         </Layout>
     );
 };

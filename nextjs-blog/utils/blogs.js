@@ -23,7 +23,6 @@ export const getSortedBlogsData = () => {
 
         // Use gray-matter to parse the blogs' metadata section which is in gray matter YAML format
         const matterResult = matter(fileContents);
-        console.log("matterresult", matterResult.data);
 
         // Combine the data with the id
         return {

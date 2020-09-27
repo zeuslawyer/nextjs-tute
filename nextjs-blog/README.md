@@ -30,8 +30,8 @@ Run `yarn dev` from the `/nextjs-blog` directory.
 
 ## `DOCKER`
 
-The `Dockerfile` is in `/nextjs-blog`.
+1. The `Dockerfile` is in `/nextjs-blog`.
 
-Run `docker build -t zeuslawyer/nextjs-tute:0.<0> .` from inside `/nextjs-blog`
+2. Build theimage : Run `docker build -t zeuslawyer/nextjs-tute:0.<0> .` from inside `/nextjs-blog`
 
-Then run `docker run -p 3000:3000 <image id>`
+3. Run the Image: Then run `docker run -d --name nextjs-blogapp -p 3000:3000 <image id>`. To run it interactively do `docker run --rm -it -p 3000:3000/tcp zeuslawyer/nextjs-tute:0.0`
