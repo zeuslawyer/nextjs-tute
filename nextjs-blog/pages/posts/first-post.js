@@ -33,7 +33,6 @@ export async function getServerSideProps() {
     const data = await res.json();
     const users = data.slice(0, 5);
 
-    console.log(users);
     // Pass data to the page via props
     return { props: { users } };
 }

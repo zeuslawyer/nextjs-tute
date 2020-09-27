@@ -30,8 +30,20 @@ Run `yarn dev` from the `/nextjs-blog` directory.
 
 ## `DOCKER`
 
-1. The `Dockerfile` is in `/nextjs-blog`.
+1. The `Dockerfile` is in `/nextjs-blog`. **_cd into it!_**
 
 2. Build theimage : Run `docker build -t zeuslawyer/nextjs-tute:0.<0> .` from inside `/nextjs-blog`
 
-3. Run the Image: Then run `docker run -d --name nextjs-blogapp -p 3000:3000 <image id>`. To run it interactively do `docker run --rm -it -p 3000:3000/tcp zeuslawyer/nextjs-tute:0.0`
+3. Run the Image: Then run:
+
+```
+docker run -p 3000:3000/tcp \
+--rm -it \
+--name nextjs-blogapp \
+-v $(pwd):/app \
+zeuslawyer/nextjs-tute:0.0
+```
+
+Note the mounting of the pwd to the docker container's `/app` workdir. (see lecture 73 of Docker & K8s). Currently the volume mapping includes our local project's `node_module` folder which is where the packages, incl `next cli` is being read from. If we want to delete our local `node_modules` and rely only on the one built inside the container we need to add a preceding `-v` mount that says `-v /app/node_modules` which will "bookmark" the container's `node_modules` and ensure that is not mapped to our local folder.
+
+4. Clean out the created **package** when you're done otherwise the image run wont work. Or if you have a previous container still in the system run `docker start nextjs-blogapp`.

@@ -43,9 +43,9 @@ function aboutMe() {
                 engineer!
             </p>
             <p>
-                (This is a sample website - you’ll be building a site like this
-                on <a href="https://nextjs.org/learn">our Next.js tutorial</a>
-                .)
+                This is entirely driven by the tutorial at{" "}
+                <a href="https://nextjs.org"> nexjs.org </a>. Except that I have
+                also Dockerized it.
             </p>
             Check out a{" "}
             <Link href="/posts/first-post">
